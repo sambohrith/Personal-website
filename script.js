@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     // 默认显示首页
     showSection('home');
-    updateActiveLink(document.querySelector('.navbar a[data-target="home"]'));
+    updateActiveLink(document.querySelector('nav.navbar a[data-target="home"]'));
 
     // 为所有导航链接添加点击事件
-    document.querySelectorAll('.navbar a').forEach(link => {
+    document.querySelectorAll('nav.navbar a').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const target = this.getAttribute('data-target');
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // 汉堡菜单切换函数
 function toggleSidebar() {
-    const nav = document.querySelector('.navbar');
+    const nav = document.querySelector('nav.navbar');
     const hamburger = document.querySelector('.hamburger');
     
     // 切换导航栏显示/隐藏
@@ -50,7 +50,7 @@ function showSection(sectionId) {
 
 // 更新活动链接样式
 function updateActiveLink(clickedLink) {
-    document.querySelectorAll('.navbar a').forEach(link => {
+    document.querySelectorAll('nav.navbar a').forEach(link => {
         link.classList.remove('active');
     });
     clickedLink.classList.add('active');
