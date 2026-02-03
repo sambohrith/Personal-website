@@ -667,6 +667,12 @@ section.active {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     gap: 1.5rem;
+}
+
+.about-row-four {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
     margin-top: 1.5rem;
 }
 
@@ -795,38 +801,48 @@ section.active {
     line-height: 1.5;
 }
 
-/* 专业团队卡片内的技术实力 */
-.team-tech-section {
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border-subtle);
+/* 信息卡片样式（愿景、使命、技术实力） */
+.info-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
 }
 
-.team-tech-section h4 {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--text-primary);
-    font-size: 0.95rem;
+.info-icon {
+    font-size: 2rem;
     margin-bottom: 0.75rem;
+    filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.4));
+}
+
+.info-card h4 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
     font-weight: 600;
 }
 
-.tech-icon-small {
-    font-size: 1.1rem;
+.info-card p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    flex-grow: 1;
 }
 
-.tech-tags {
+.tech-tags-compact {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
 }
 
 .tech-tag {
     background: rgba(0, 212, 255, 0.1);
     border: 1px solid rgba(0, 212, 255, 0.3);
     border-radius: 20px;
-    padding: 0.35rem 0.75rem;
+    padding: 0.3rem 0.6rem;
     font-size: 0.75rem;
     color: var(--text-secondary);
     transition: all var(--transition-normal);
@@ -1532,9 +1548,16 @@ footer {
     }
     
     .about-cards-row,
-    .about-row-two,
-    .about-row-three {
+    .about-row-two {
         grid-template-columns: 1fr;
+    }
+    
+    .about-row-three {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .about-row-four {
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .about-grid {
