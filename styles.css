@@ -795,6 +795,49 @@ section.active {
     line-height: 1.5;
 }
 
+/* 专业团队卡片内的技术实力 */
+.team-tech-section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.team-tech-section h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.tech-icon-small {
+    font-size: 1.1rem;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-tag {
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 20px;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: all var(--transition-normal);
+}
+
+.tech-tag:hover {
+    background: rgba(0, 212, 255, 0.2);
+    border-color: var(--border-glow);
+    transform: translateY(-2px);
+}
+
 /* 时间线 */
 .timeline-card {
     padding: 2rem;
