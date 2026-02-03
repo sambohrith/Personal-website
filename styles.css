@@ -610,7 +610,14 @@ section.active {
    关于我们页面
    ======================================== */
 .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.about-grid {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
 
@@ -1438,9 +1445,14 @@ footer {
         grid-template-columns: 1fr;
     }
     
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    
     .values-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+}
 
 @media (max-width: 768px) {
     header {
