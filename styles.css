@@ -1276,10 +1276,11 @@ footer {
     padding-top: 2rem;
     border-top: 1px solid var(--border-subtle);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
+    text-align: center;
 }
 
 .footer-bottom p {
