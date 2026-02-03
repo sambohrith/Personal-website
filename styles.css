@@ -656,6 +656,20 @@ section.active {
 }
 
 /* 关于我们页面 - 卡片式布局 */
+.about-row-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.about-row-three {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
 .about-cards-row {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
@@ -1441,7 +1455,9 @@ footer {
         display: none;
     }
     
-    .about-cards-row {
+    .about-cards-row,
+    .about-row-two,
+    .about-row-three {
         grid-template-columns: 1fr;
     }
     
@@ -1598,5 +1614,4 @@ footer {
 ::selection {
     background: rgba(0, 212, 255, 0.3);
     color: var(--text-primary);
-}
 }
