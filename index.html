@@ -5,21 +5,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>上海爱斯利嘉半导体科技有限公司</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+  <!-- 背景装饰元素 -->
+  <div class="bg-decoration">
+    <div class="circuit-line line-1"></div>
+    <div class="circuit-line line-2"></div>
+    <div class="circuit-line line-3"></div>
+    <div class="circuit-line line-4"></div>
+    <div class="glow-point point-1"></div>
+    <div class="glow-point point-2"></div>
+    <div class="glow-point point-3"></div>
+    <div class="glow-point point-4"></div>
+    <div class="chip-pattern"></div>
+  </div>
+
+  <!-- 粒子背景 -->
+  <canvas id="particleCanvas" class="particle-bg"></canvas>
+
   <header>
     <h1 class="site-title">
       <img src="images/logo.svg" alt="爱斯利嘉logo" class="company-logo">
-      上海爱斯利嘉半导体科技有限公司
+      <span class="title-text">上海爱斯利嘉半导体科技有限公司</span>
     </h1>
     <nav class="navbar">
-      <a href="#" data-target="home">首页</a>
-      <a href="#" data-target="about">关于我们</a>
-      <a href="#" data-target="solutions">解决方案</a>
-      <a href="#" data-target="services">技术与服务</a>
-      <a href="#" data-target="contact">联系我们</a>
+      <a href="#" data-target="home" class="active">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-text">首页</span>
+      </a>
+      <a href="#" data-target="about">
+        <span class="nav-icon">🏢</span>
+        <span class="nav-text">关于我们</span>
+      </a>
+      <a href="#" data-target="solutions">
+        <span class="nav-icon">💡</span>
+        <span class="nav-text">解决方案</span>
+      </a>
+      <a href="#" data-target="services">
+        <span class="nav-icon">⚙️</span>
+        <span class="nav-text">技术与服务</span>
+      </a>
+      <a href="#" data-target="contact">
+        <span class="nav-icon">📞</span>
+        <span class="nav-text">联系我们</span>
+      </a>
     </nav>
     <div class="hamburger" onclick="toggleSidebar()">
       <div></div>
@@ -27,145 +61,259 @@
       <div></div>
     </div>
   </header>
+
   <div class="content">
+    <!-- 首页 -->
     <section id="home" class="active">
-      <h2>欢迎来到上海爱斯利嘉半导体</h2>
-      <div class="company-intro">
-        <div class="intro-text">
-          <p class="headline">我们是一家专注于半导体技术研发与创新的高科技企业</p>
-          <p>作为半导体行业的领军企业，我们致力于：</p>
-          <ul class="features-list">
-            <li>提供先进的半导体解决方案和技术支持</li>
-            <li>专注于集成电路设计与制造工艺优化</li>
-            <li>推动半导体技术的本土化发展</li>
-            <li>为客户提供全方位的技术咨询服务</li>
-          </ul>
-          <p class="commitment">凭借深厚的技术积累和创新能力，我们持续为中国半导体产业的发展贡献力量。</p>
+      <div class="hero-section">
+        <div class="hero-bg-pattern"></div>
+        <div class="floating-elements">
+          <div class="float-icon icon-1">⚡</div>
+          <div class="float-icon icon-2">💻</div>
+          <div class="float-icon icon-3">🔬</div>
+          <div class="float-icon icon-4">📊</div>
         </div>
-        <div class="intro-stats">
-          <div class="stat-item">
-            <span class="stat-number">10+</span>
-            <span class="stat-label">年行业经验</span>
+        <h2>欢迎来到上海爱斯利嘉半导体</h2>
+        <div class="company-intro">
+          <div class="intro-text">
+            <p class="headline">我们是一家专注于半导体技术研发与创新的高科技企业</p>
+            <p>作为半导体行业的领军企业，我们致力于：</p>
+            <ul class="features-list">
+              <li>
+                <span class="feature-icon">🔧</span>
+                <span>提供先进的半导体解决方案和技术支持</span>
+              </li>
+              <li>
+                <span class="feature-icon">💻</span>
+                <span>专注于集成电路设计与制造工艺优化</span>
+              </li>
+              <li>
+                <span class="feature-icon">🚀</span>
+                <span>推动半导体技术的本土化发展</span>
+              </li>
+              <li>
+                <span class="feature-icon">🤝</span>
+                <span>为客户提供全方位的技术咨询服务</span>
+              </li>
+            </ul>
+            <p class="commitment">凭借深厚的技术积累和创新能力，我们持续为中国半导体产业的发展贡献力量。</p>
           </div>
-          <div class="stat-item">
-            <span class="stat-number">100+</span>
-            <span class="stat-label">技术专利</span>
+          <div class="intro-stats">
+            <div class="stat-card">
+              <div class="stat-icon-bg">📅</div>
+              <span class="stat-number" data-target="10">0</span>
+              <span class="stat-label">年行业经验</span>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon-bg">📜</div>
+              <span class="stat-number" data-target="100">0</span>
+              <span class="stat-label">技术专利</span>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon-bg">🤝</div>
+              <span class="stat-number" data-target="500">0</span>
+              <span class="stat-label">合作伙伴</span>
+            </div>
           </div>
-          <div class="stat-item">
-            <span class="stat-number">500+</span>
-            <span class="stat-label">合作伙伴</span>
+        </div>
+      </div>
+
+      <!-- 核心技术展示 -->
+      <div class="tech-showcase">
+        <h3 class="section-subtitle">核心技术领域</h3>
+        <div class="tech-grid">
+          <div class="tech-item">
+            <div class="tech-ring"></div>
+            <div class="tech-icon">💻</div>
+            <h4>集成电路设计</h4>
+            <p>数字/模拟/混合信号</p>
+          </div>
+          <div class="tech-item">
+            <div class="tech-ring"></div>
+            <div class="tech-icon">⚙️</div>
+            <h4>工艺优化</h4>
+            <p>制程改进与良率提升</p>
+          </div>
+          <div class="tech-item">
+            <div class="tech-ring"></div>
+            <div class="tech-icon">🧪</div>
+            <h4>测试验证</h4>
+            <p>全面测试与失效分析</p>
+          </div>
+          <div class="tech-item">
+            <div class="tech-ring"></div>
+            <div class="tech-icon">📡</div>
+            <h4>物联网芯片</h4>
+            <p>低功耗无线通信</p>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- 关于我们 -->
     <section id="about">
-      <h2>关于我们</h2>
+      <div class="section-header">
+        <div class="header-icon">🏢</div>
+        <h2>关于我们</h2>
+        <p class="section-desc">了解爱斯利嘉的发展历程与企业文化</p>
+      </div>
+      
       <div class="about-content">
-        <p>上海爱斯利嘉半导体科技有限公司是中国领先的半导体技术企业，专注于为客户提供全方位的半导体解决方案和技术服务。我们的使命是通过创新的技术和服务，帮助客户实现他们的业务目标，推动中国半导体产业的自主创新与可持续发展。</p>
-        
-        <div class="company-history">
-          <h3>发展历程</h3>
+        <div class="about-card intro-highlight">
+          <div class="card-badge">🎯</div>
+          <p>上海爱斯利嘉半导体科技有限公司是中国领先的半导体技术企业，专注于为客户提供全方位的半导体解决方案和技术服务。我们的使命是通过创新的技术和服务，帮助客户实现他们的业务目标，推动中国半导体产业的自主创新与可持续发展。</p>
+        </div>
+
+        <div class="about-card timeline-card">
+          <h3>
+            <span class="title-icon">📈</span>
+            发展历程
+          </h3>
           <div class="timeline">
             <div class="timeline-item">
               <span class="timeline-year">2014</span>
-              <p>公司在上海浦东新区成立，专注于半导体技术研发</p>
+              <div class="timeline-content">
+                <strong>公司成立</strong>
+                <p>公司在上海浦东新区成立，专注于半导体技术研发</p>
+              </div>
             </div>
             <div class="timeline-item">
               <span class="timeline-year">2016</span>
-              <p>获得首轮融资，扩大研发团队规模，建立初步实验室</p>
+              <div class="timeline-content">
+                <strong>首轮融资</strong>
+                <p>获得首轮融资，扩大研发团队规模，建立初步实验室</p>
+              </div>
             </div>
             <div class="timeline-item">
               <span class="timeline-year">2018</span>
-              <p>获得国家高新技术企业认证，推出首批自主研发的集成电路产品</p>
+              <div class="timeline-content">
+                <strong>高企认证</strong>
+                <p>获得国家高新技术企业认证，推出首批自主研发的集成电路产品</p>
+              </div>
             </div>
             <div class="timeline-item">
               <span class="timeline-year">2020</span>
-              <p>扩建现代化研发中心，引进国际先进设备，加强产学研合作</p>
+              <div class="timeline-content">
+                <strong>研发中心扩建</strong>
+                <p>扩建现代化研发中心，引进国际先进设备，加强产学研合作</p>
+              </div>
             </div>
             <div class="timeline-item">
               <span class="timeline-year">2022</span>
-              <p>产品成功进入国际市场，与多家全球领先企业建立合作关系</p>
+              <div class="timeline-content">
+                <strong>国际化进程</strong>
+                <p>产品成功进入国际市场，与多家全球领先企业建立合作关系</p>
+              </div>
             </div>
             <div class="timeline-item">
               <span class="timeline-year">2024</span>
-              <p>持续技术创新，扩大产品线，提升服务能力，巩固行业领先地位</p>
+              <div class="timeline-content">
+                <strong>行业领先</strong>
+                <p>持续技术创新，扩大产品线，提升服务能力，巩固行业领先地位</p>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="team-section">
-          <h3>专业团队</h3>
-          <p>我们拥有一支由行业专家、技术精英组成的高素质团队，其中：</p>
-          <ul>
-            <li>核心研发团队成员均拥有硕士及以上学历，平均行业经验超过10年</li>
-            <li>多位专家来自国际知名半导体企业，拥有丰富的产品开发和项目管理经验</li>
-            <li>与多所知名高校建立联合实验室，吸引顶尖人才加入</li>
-            <li>定期组织团队参加国际学术交流和技术培训，保持技术前沿性</li>
-          </ul>
-          <p>我们注重人才培养和团队建设，为员工提供良好的发展平台和创新环境，致力于打造一支具有国际视野和创新能力的半导体专业团队。</p>
+        <div class="about-grid">
+          <div class="about-card">
+            <h3>
+              <span class="title-icon">👥</span>
+              专业团队
+            </h3>
+            <p>我们拥有一支由行业专家、技术精英组成的高素质团队：</p>
+            <ul>
+              <li>核心研发团队成员均拥有硕士及以上学历，平均行业经验超过10年</li>
+              <li>多位专家来自国际知名半导体企业，拥有丰富的产品开发和项目管理经验</li>
+              <li>与多所知名高校建立联合实验室，吸引顶尖人才加入</li>
+              <li>定期组织团队参加国际学术交流和技术培训，保持技术前沿性</li>
+            </ul>
+          </div>
+
+          <div class="about-card">
+            <h3>
+              <span class="title-icon">🔬</span>
+              技术实力
+            </h3>
+            <p>公司拥有强大的技术研发能力和完善的产品线：</p>
+            <ul>
+              <li>自主研发的核心技术涵盖数字电路、模拟电路、混合信号设计等多个领域</li>
+              <li>具备从芯片设计、仿真验证到测试封装的全流程技术能力</li>
+              <li>拥有100+项技术专利和软件著作权，技术创新能力处于行业领先水平</li>
+              <li>建立了完善的EDA工具链和仿真环境，支持先进工艺节点的芯片开发</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="tech-capabilities">
-          <h3>技术实力</h3>
-          <p>公司拥有强大的技术研发能力和完善的产品线：</p>
-          <ul>
-            <li>自主研发的核心技术涵盖数字电路、模拟电路、混合信号设计等多个领域</li>
-            <li>具备从芯片设计、仿真验证到测试封装的全流程技术能力</li>
-            <li>拥有100+项技术专利和软件著作权，技术创新能力处于行业领先水平</li>
-            <li>建立了完善的EDA工具链和仿真环境，支持先进工艺节点的芯片开发</li>
-            <li>拥有现代化的测试实验室，配备先进的测试设备和分析仪器</li>
-          </ul>
+        <div class="about-card values-card">
+          <h3>
+            <span class="title-icon">💎</span>
+            核心价值观
+          </h3>
+          <div class="values-grid">
+            <div class="value-item">
+              <div class="value-icon">💡</div>
+              <strong>创新驱动</strong>
+              <span>持续投入研发，推动技术突破</span>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">✨</div>
+              <strong>品质至上</strong>
+              <span>严格质量管控，确保高品质</span>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">🤝</div>
+              <strong>客户为本</strong>
+              <span>深入理解需求，创造最大价值</span>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">🌐</div>
+              <strong>合作共赢</strong>
+              <span>建立长期稳定的合作关系</span>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">⚖️</div>
+              <strong>诚信正直</strong>
+              <span>坚持诚信经营，遵守商业道德</span>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">🛡️</div>
+              <strong>责任担当</strong>
+              <span>积极承担社会责任</span>
+            </div>
+          </div>
         </div>
 
-        <div class="core-values">
-          <h3>核心价值观</h3>
-          <ul>
-            <li><strong>创新驱动</strong> - 持续投入研发，推动技术突破，保持技术领先优势</li>
-            <li><strong>品质至上</strong> - 建立严格的质量管控体系，确保产品和服务的高品质</li>
-            <li><strong>客户为本</strong> - 深入理解客户需求，为客户创造最大价值</li>
-            <li><strong>合作共赢</strong> - 与合作伙伴建立长期稳定的合作关系，共同发展</li>
-            <li><strong>诚信正直</strong> - 坚持诚信经营，遵守商业道德和行业规范</li>
-            <li><strong>责任担当</strong> - 积极承担社会责任，推动行业健康发展</li>
-          </ul>
-        </div>
-
-        <div class="achievements">
-          <h3>主要成就</h3>
-          <ul>
-            <li>获得国家高新技术企业认证</li>
-            <li>拥有100+项发明专利和实用新型专利</li>
-            <li>建立完善的研发中心和实验室，配备先进的研发设备</li>
-            <li>与多所高校建立产学研合作关系，共同培养专业人才</li>
-            <li>产品广泛应用于消费电子、汽车电子、物联网等多个领域</li>
-            <li>获得多项行业奖项和客户认可</li>
-            <li>成功进入国际市场，与多家全球领先企业建立合作关系</li>
-          </ul>
-        </div>
-
-        <div class="vision-mission">
-          <h3>愿景与使命</h3>
-          <p><strong>公司愿景：</strong>成为全球领先的半导体技术解决方案提供商，引领行业技术发展，为构建智能互联的未来贡献力量。</p>
-          <p><strong>公司使命：</strong>通过持续的技术创新和优质的服务，为客户创造价值，推动中国半导体产业的自主创新与可持续发展，助力实现半导体强国梦。</p>
-        </div>
-
-        <div class="strategic-plan">
-          <h3>战略规划</h3>
-          <p>未来三年，公司将围绕以下战略方向发展：</p>
-          <ul>
-            <li>加大研发投入，重点发展先进工艺节点的芯片设计技术</li>
-            <li>拓展产品线，重点布局物联网、汽车电子、人工智能等新兴领域</li>
-            <li>加强国际合作，提升全球市场竞争力</li>
-            <li>完善人才培养体系，吸引和培养更多优秀人才</li>
-            <li>推进数字化转型，提升企业运营效率和创新能力</li>
-          </ul>
+        <div class="about-card vision-card">
+          <div class="vision-content">
+            <div class="vision-item">
+              <div class="vision-icon">🔭</div>
+              <h4>公司愿景</h4>
+              <p>成为全球领先的半导体技术解决方案提供商，引领行业技术发展，为构建智能互联的未来贡献力量。</p>
+            </div>
+            <div class="vision-divider"></div>
+            <div class="vision-item">
+              <div class="vision-icon">🎯</div>
+              <h4>公司使命</h4>
+              <p>通过持续的技术创新和优质的服务，为客户创造价值，推动中国半导体产业的自主创新与可持续发展。</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- 技术与服务 -->
     <section id="services">
-      <h2>我们的服务</h2>
+      <div class="section-header">
+        <div class="header-icon">⚙️</div>
+        <h2>技术与服务</h2>
+        <p class="section-desc">全方位的半导体技术服务支持</p>
+      </div>
+      
       <div class="services-grid">
-        <div class="service-item">
-          <div class="service-icon">
+        <div class="service-card featured">
+          <div class="service-badge">热门</div>
+          <div class="service-icon-wrapper">
             <img src="images/tech-support.svg" alt="技术支持图标">
           </div>
           <h3>技术支持</h3>
@@ -176,10 +324,14 @@
             <li>性能测试与分析</li>
             <li>质量控制体系建设</li>
           </ul>
+          <div class="service-tags">
+            <span class="tag">7×24小时</span>
+            <span class="tag">专家支持</span>
+          </div>
         </div>
 
-        <div class="service-item">
-          <div class="service-icon">
+        <div class="service-card">
+          <div class="service-icon-wrapper">
             <img src="images/software-dev.svg" alt="软件开发图标">
           </div>
           <h3>软件开发</h3>
@@ -190,10 +342,14 @@
             <li>测试系统集成方案</li>
             <li>数据分析平台开发</li>
           </ul>
+          <div class="service-tags">
+            <span class="tag">定制化</span>
+            <span class="tag">高效率</span>
+          </div>
         </div>
 
-        <div class="service-item">
-          <div class="service-icon">
+        <div class="service-card">
+          <div class="service-icon-wrapper">
             <img src="images/consulting.svg" alt="咨询顾问图标">
           </div>
           <h3>咨询顾问</h3>
@@ -204,10 +360,14 @@
             <li>技术发展趋势分析</li>
             <li>投资可行性研究</li>
           </ul>
+          <div class="service-tags">
+            <span class="tag">专业团队</span>
+            <span class="tag">行业洞察</span>
+          </div>
         </div>
 
-        <div class="service-item">
-          <div class="service-icon">
+        <div class="service-card">
+          <div class="service-icon-wrapper">
             <img src="images/training.svg" alt="培训支持图标">
           </div>
           <h3>培训和支持</h3>
@@ -218,13 +378,59 @@
             <li>质量管理体系培训</li>
             <li>现场技术指导服务</li>
           </ul>
+          <div class="service-tags">
+            <span class="tag">实战培训</span>
+            <span class="tag">持续跟进</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 服务流程 -->
+      <div class="service-process">
+        <h3 class="section-subtitle">服务流程</h3>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-number">01</div>
+            <div class="step-icon">📋</div>
+            <h4>需求分析</h4>
+            <p>深入了解客户需求</p>
+          </div>
+          <div class="process-arrow">→</div>
+          <div class="process-step">
+            <div class="step-number">02</div>
+            <div class="step-icon">💡</div>
+            <h4>方案设计</h4>
+            <p>制定技术解决方案</p>
+          </div>
+          <div class="process-arrow">→</div>
+          <div class="process-step">
+            <div class="step-number">03</div>
+            <div class="step-icon">🔧</div>
+            <h4>项目实施</h4>
+            <p>专业技术团队执行</p>
+          </div>
+          <div class="process-arrow">→</div>
+          <div class="process-step">
+            <div class="step-number">04</div>
+            <div class="step-icon">✅</div>
+            <h4>交付验收</h4>
+            <p>确保项目质量达标</p>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- 解决方案 -->
     <section id="solutions">
-      <h2>解决方案</h2>
+      <div class="section-header">
+        <div class="header-icon">💡</div>
+        <h2>解决方案</h2>
+        <p class="section-desc">行业领先的半导体解决方案</p>
+      </div>
+
       <div class="solutions-grid">
-        <div class="solution-item">
+        <div class="solution-card" data-category="design">
+          <div class="solution-icon">💻</div>
           <h3>集成电路设计</h3>
           <p>提供完整的集成电路设计解决方案</p>
           <ul>
@@ -233,9 +439,14 @@
             <li>混合信号设计</li>
             <li>IP核开发</li>
           </ul>
+          <div class="solution-footer">
+            <span class="solution-tag">ASIC</span>
+            <span class="solution-tag">FPGA</span>
+          </div>
         </div>
 
-        <div class="solution-item">
+        <div class="solution-card" data-category="process">
+          <div class="solution-icon">⚙️</div>
           <h3>工艺优化</h3>
           <p>专业的半导体工艺优化方案：</p>
           <ul>
@@ -244,9 +455,14 @@
             <li>成本优化</li>
             <li>工艺整合</li>
           </ul>
+          <div class="solution-footer">
+            <span class="solution-tag">良率提升</span>
+            <span class="solution-tag">成本控制</span>
+          </div>
         </div>
 
-        <div class="solution-item">
+        <div class="solution-card" data-category="design">
+          <div class="solution-icon">🧪</div>
           <h3>测试与验证</h3>
           <p>全面的测试验证服务：</p>
           <ul>
@@ -255,9 +471,14 @@
             <li>可靠性验证</li>
             <li>失效分析</li>
           </ul>
+          <div class="solution-footer">
+            <span class="solution-tag">DFT</span>
+            <span class="solution-tag">ATE</span>
+          </div>
         </div>
 
-        <div class="solution-item">
+        <div class="solution-card" data-category="design">
+          <div class="solution-icon">🎯</div>
           <h3>产品定制</h3>
           <p>个性化的产品定制服务：</p>
           <ul>
@@ -266,9 +487,14 @@
             <li>原型开发</li>
             <li>量产支持</li>
           </ul>
+          <div class="solution-footer">
+            <span class="solution-tag">Turnkey</span>
+            <span class="solution-tag">NRE</span>
+          </div>
         </div>
-        
-        <div class="solution-item">
+
+        <div class="solution-card" data-category="application">
+          <div class="solution-icon">📡</div>
           <h3>物联网芯片解决方案</h3>
           <p>针对物联网应用的专用芯片方案：</p>
           <ul>
@@ -277,9 +503,14 @@
             <li>传感器接口开发</li>
             <li>安全加密模块</li>
           </ul>
+          <div class="solution-footer">
+            <span class="solution-tag">IoT</span>
+            <span class="solution-tag">低功耗</span>
+          </div>
         </div>
-        
-        <div class="solution-item">
+
+        <div class="solution-card" data-category="application">
+          <div class="solution-icon">⚡</div>
           <h3>功率半导体解决方案</h3>
           <p>高效能功率半导体产品与方案：</p>
           <ul>
@@ -288,9 +519,14 @@
             <li>电源管理IC</li>
             <li>能源转换系统</li>
           </ul>
+          <div class="solution-footer">
+            <span class="solution-tag">Power</span>
+            <span class="solution-tag">高效能</span>
+          </div>
         </div>
-        
-        <div class="solution-item">
+
+        <div class="solution-card" data-category="application">
+          <div class="solution-icon">🚗</div>
           <h3>汽车电子解决方案</h3>
           <p>符合车规级标准的半导体解决方案：</p>
           <ul>
@@ -299,9 +535,14 @@
             <li>电池管理系统</li>
             <li>汽车安全芯片</li>
           </ul>
+          <div class="solution-footer">
+            <span class="solution-tag">车规级</span>
+            <span class="solution-tag">AEC-Q</span>
+          </div>
         </div>
-        
-        <div class="solution-item">
+
+        <div class="solution-card" data-category="application">
+          <div class="solution-icon">💡</div>
           <h3>光电子解决方案</h3>
           <p>先进的光电子技术与产品：</p>
           <ul>
@@ -310,34 +551,186 @@
             <li>光通信芯片</li>
             <li>图像传感器</li>
           </ul>
+          <div class="solution-footer">
+            <span class="solution-tag">光电</span>
+            <span class="solution-tag">通信</span>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- 联系我们 -->
     <section id="contact">
-      <h2>联系我们</h2>
-      <div class="contact-info">
-        <div class="contact-details">
+      <div class="section-header">
+        <div class="header-icon">📞</div>
+        <h2>联系我们</h2>
+        <p class="section-desc">期待与您的合作，共创美好未来</p>
+      </div>
+
+      <div class="contact-wrapper">
+        <div class="contact-info-card">
           <h3>联系方式</h3>
-          <p><strong>联系电话：</strong>021-XXXX-XXXX</p>
-          <p><strong>联系人：</strong>陶经理</p>
-          <p><strong>工作时间：</strong>周一至周五 9:00-18:00</p>
-          <p><strong>公司地址：</strong>上海市浦东新区XX路XX号</p>
+          <div class="contact-item">
+            <div class="contact-item-icon">📞</div>
+            <div class="contact-item-content">
+              <h4>联系电话</h4>
+              <p>021-XXXX-XXXX</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">👤</div>
+            <div class="contact-item-content">
+              <h4>联系人</h4>
+              <p>陶经理</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">🕐</div>
+            <div class="contact-item-content">
+              <h4>工作时间</h4>
+              <p>周一至周五 9:00-18:00</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div class="contact-item-content">
+              <h4>公司地址</h4>
+              <p>上海市浦东新区XX路XX号</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">✉️</div>
+            <div class="contact-item-content">
+              <h4>电子邮箱</h4>
+              <p>contact@aisilijia.com</p>
+            </div>
+          </div>
+
+          <div class="contact-social">
+            <h4>关注我们</h4>
+            <div class="social-links">
+              <a href="#" class="social-link" title="微信">📱</a>
+              <a href="#" class="social-link" title="微博">📝</a>
+              <a href="#" class="social-link" title="LinkedIn">💼</a>
+              <a href="#" class="social-link" title="邮箱">✉️</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-card">
+          <h3>在线咨询</h3>
+          <p class="form-desc">填写以下表单，我们将尽快与您联系</p>
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">姓名 *</label>
+                <input type="text" id="name" name="name" placeholder="请输入您的姓名" required>
+              </div>
+              <div class="form-group">
+                <label for="company">公司名称</label>
+                <input type="text" id="company" name="company" placeholder="请输入公司名称">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">电子邮箱 *</label>
+                <input type="email" id="email" name="email" placeholder="请输入您的邮箱" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">联系电话</label>
+                <input type="tel" id="phone" name="phone" placeholder="请输入联系电话">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">咨询主题</label>
+              <select id="subject" name="subject">
+                <option value="">请选择咨询主题</option>
+                <option value="design">芯片设计服务</option>
+                <option value="process">工艺优化咨询</option>
+                <option value="solution">解决方案定制</option>
+                <option value="cooperation">商务合作</option>
+                <option value="other">其他</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">留言内容 *</label>
+              <textarea id="message" name="message" placeholder="请详细描述您的需求或问题" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">
+              <span class="btn-text">提交咨询</span>
+              <span class="btn-icon">→</span>
+            </button>
+          </form>
         </div>
       </div>
-      <form>
-        <label for="name">姓名:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">电子邮件:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">消息:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-        <input type="submit" value="提交">
-      </form>
+
+      <!-- 地图占位区域 -->
+      <div class="map-section">
+        <div class="map-placeholder">
+          <div class="map-icon">🗺️</div>
+          <p>公司位置地图</p>
+          <span>上海市浦东新区</span>
+        </div>
+      </div>
     </section>
   </div>
+
   <footer>
-    <p>&copy; 2024 上海爱斯利嘉半导体科技有限公司. 版权所有.</p>
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="footer-logo">
+          <img src="images/logo.svg" alt="爱斯利嘉logo" class="footer-logo-img">
+          <span>爱斯利嘉半导体</span>
+        </div>
+        <p>专注于半导体技术研发与创新，为客户提供全方位的半导体解决方案。</p>
+        <div class="footer-cert">
+          <span class="cert-badge">国家高新技术企业</span>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>快速链接</h4>
+        <div class="footer-links">
+          <a href="#" data-target="home">首页</a>
+          <a href="#" data-target="about">关于我们</a>
+          <a href="#" data-target="solutions">解决方案</a>
+          <a href="#" data-target="services">技术与服务</a>
+          <a href="#" data-target="contact">联系我们</a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>解决方案</h4>
+        <div class="footer-links">
+          <a href="#">集成电路设计</a>
+          <a href="#">工艺优化</a>
+          <a href="#">物联网芯片</a>
+          <a href="#">汽车电子</a>
+          <a href="#">功率半导体</a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>联系我们</h4>
+        <div class="footer-contact">
+          <p>📞 021-XXXX-XXXX</p>
+          <p>👤 陶经理</p>
+          <p>📍 上海市浦东新区XX路XX号</p>
+          <p>✉️ contact@aisilijia.com</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p>&copy; 2024 上海爱斯利嘉半导体科技有限公司. 版权所有.</p>
+        <div class="footer-legal">
+          <a href="#">隐私政策</a>
+          <span class="divider">|</span>
+          <a href="#">使用条款</a>
+          <span class="divider">|</span>
+          <a href="#">网站地图</a>
+        </div>
+      </div>
+    </div>
   </footer>
+
   <script src="script.js"></script>
 </body>
 
