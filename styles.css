@@ -436,7 +436,7 @@ section.active {
     background: var(--gradient-card);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
-    padding: 2rem;
+    padding: 1.5rem;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -460,13 +460,13 @@ section.active {
 }
 
 .stat-icon-bg {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
     filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5));
 }
 
 .stat-number {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 800;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
@@ -477,8 +477,8 @@ section.active {
 
 .stat-label {
     color: var(--text-secondary);
-    font-size: 0.95rem;
-    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
     display: block;
 }
 
