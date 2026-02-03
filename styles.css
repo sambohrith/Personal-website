@@ -762,6 +762,39 @@ section.active {
     flex-grow: 1;
 }
 
+/* 专业团队卡片内的愿景使命 */
+.team-vm-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.vm-item {
+    text-align: center;
+}
+
+.vm-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.4));
+}
+
+.vm-item h4 {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+}
+
+.vm-item p {
+    color: var(--text-tertiary);
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
 /* 时间线 */
 .timeline-card {
     padding: 2rem;
@@ -1567,6 +1600,10 @@ footer {
     
     .values-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .team-vm-row {
+        grid-template-columns: 1fr;
     }
     
     .tech-icon {
