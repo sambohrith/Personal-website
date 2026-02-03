@@ -669,6 +669,99 @@ section.active {
     filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3));
 }
 
+/* 关于我们页面 - 卡片式布局 */
+.about-cards-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.values-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.values-card h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    font-size: 1.3rem;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    flex-grow: 1;
+}
+
+.value-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all var(--transition-normal);
+}
+
+.value-item:hover {
+    background: rgba(0, 212, 255, 0.05);
+    border-color: var(--border-glow);
+    transform: translateY(-3px);
+}
+
+.value-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.5));
+}
+
+.value-item strong {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+}
+
+.value-item span {
+    color: var(--text-tertiary);
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+.vision-mission-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.vision-icon-large {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.5));
+}
+
+.vision-mission-card h4 {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.vision-mission-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    flex-grow: 1;
+}
+
 /* 时间线 */
 .timeline-card {
     padding: 2rem;
@@ -1361,7 +1454,14 @@ footer {
     .process-arrow {
         display: none;
     }
-}
+    
+    .about-cards-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .values-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
 @media (max-width: 768px) {
     header {
@@ -1456,6 +1556,10 @@ footer {
         text-align: left;
         gap: 1rem;
         min-height: auto;
+    }
+    
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .tech-icon {
