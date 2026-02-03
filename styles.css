@@ -771,7 +771,7 @@ section.active {
 /* 专业团队卡片内的愿景使命 */
 .team-vm-row {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     margin-top: 1.5rem;
     padding-top: 1.5rem;
@@ -1571,6 +1571,10 @@ footer {
     .values-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+    
+    .team-vm-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -1672,10 +1676,6 @@ footer {
     
     .team-vm-row {
         grid-template-columns: 1fr;
-    }
-    
-    .tech-icon {
-        margin-bottom: 0;
     }
 }
 
